@@ -5,10 +5,10 @@ public class MouseSmoothLook2D : MonoBehaviour {
 
 	public Camera theCamera;
 	public float smoothing = 5.0f;
-	public float adjustmentAngle = 2.5f;
+	public float adjustmentAngle = 0.0f;
 
 	void Update(){
-		Vector3 target = theCamera.ScreenToViewportPoint (Input.mousePosition);
+		Vector3 target = theCamera.ScreenToWorldPoint (Input.mousePosition);
 
 		Vector3 difference = target - transform.position;
 		difference.Normalize ();
