@@ -3,6 +3,7 @@ guid: f533a12790a8c364d91353dae5fef378
 TextureImporter:
   fileIDToRecycleName:
     21300000: Hero_fire_anim_0
+    21300002: Hero_fire_anim_1
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -47,10 +48,20 @@ TextureImporter:
     - name: Hero_fire_anim_0
       rect:
         serializedVersion: 2
-        x: 69
-        y: 46
-        width: 112
-        height: 164
+        x: 0
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Hero_fire_anim_1
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 256
+        height: 256
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
