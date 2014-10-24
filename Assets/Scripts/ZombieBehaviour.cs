@@ -5,7 +5,7 @@ public class ZombieBehaviour : MonoBehaviour {
 
 	private Transform player;
 	public int health = 10;
-	public int damage = 2;
+	public int damage = 100;
 	public GameObject explosionPrefab;
 	public float adjustExplosionAngle = 0.0f;
 
