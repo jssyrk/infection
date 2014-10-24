@@ -14,11 +14,12 @@ public class PlayerBehaviour : MonoBehaviour {
 	private Animator walkingAnim;
 	private AudioSource walkingSound;
 
-	void start(){
+	void Start(){
 
 		anim = GetComponent<Animator> ();
 		walkingAnim = walkingTransform.GetComponent<Animator> ();
 		walkingSound = walkingTransform.GetComponent<AudioSource> ();
+
 
 		if(onUpdateHealth != null){
 			onUpdateHealth(health);
