@@ -3,8 +3,7 @@ using System.Collections;
 
 public class ShootBullet : MonoBehaviour {
 
-	public GameObject bulletPrefab;
-	public Transform bulletSpawn;
+	public SpawnerObject bulletSpawn;
 	public float fireTime = 0.5f;
 
 	private bool isFiring = false;
@@ -15,7 +14,7 @@ public class ShootBullet : MonoBehaviour {
 
 	void Fire(){
 		isFiring = true;
-		Instantiate (bulletPrefab, bulletSpawn.position, bulletSpawn.rotation);
+		bulletSpawn.Spawn();
 
 		if(audio){
 			audio.Play();

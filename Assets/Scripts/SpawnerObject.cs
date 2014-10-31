@@ -3,7 +3,7 @@ using System.Collections;
 
 public class SpawnerObject : MonoBehaviour {
 
-	public GameObject objectPrefab;
+	public string pooledObjectName = "";
 
 	private Transform mTransform;
 
@@ -12,6 +12,14 @@ public class SpawnerObject : MonoBehaviour {
 	}
 
 	public void Spawn(){
-		Instantiate (objectPrefab, mTransform.position, mTransform.rotation);
+		if(pooledObjectName != ""){
+			GameObject g = PoolManager.current.GetPooledObject(pooledObjectName);
+
+			if(g != null){
+				g.transform.position = mTransform.position;
+				g.transform.rotation = mTransform.rotation;
+				g.SetActive(true);
+			}
+		}
 	}
 }

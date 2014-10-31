@@ -6,15 +6,15 @@ public class Bullet2D : MonoBehaviour {
 	public float speed = 10.0f;
 	public float destroyTime = 2.0f;
 
-	void Start(){
+	void OnEnable(){
 		Invoke ("Die", destroyTime);
 	}
 
 	void Die(){
-		Destroy (gameObject);
+		gameObject.SetActive (false);
 	}
 
-	void OnDestroy(){
+	void OnDisable(){
 		CancelInvoke ("Die");
 	}
 
