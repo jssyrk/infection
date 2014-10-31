@@ -57,6 +57,8 @@ public class PlayerBehaviour : MonoBehaviour {
 
 	public void TakeDamage(int damage){
 
+
+
 		health -= damage;
 
 		if(onUpdateHealth != null){

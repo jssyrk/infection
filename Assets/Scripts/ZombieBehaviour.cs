@@ -22,10 +22,11 @@ public class ZombieBehaviour : MonoBehaviour {
 	
 	void OnCollisionEnter2D(Collision2D other){
 		if(other.gameObject.CompareTag("Player")){
-				player = GameObject.FindWithTag ("Player").transform;
+			other.transform.SendMessage( "TakeDamage", damage );
+				//player = GameObject.FindWithTag ("Player").transform;
 
-				GetComponent<MoveTowardsObject>().target = player;
-				GetComponent<SmoothLookAtTarget2D>().target = player;
+			//	GetComponent<MoveTowardsObject>().target = player;
+				//GetComponent<SmoothLookAtTarget2D>().target = player;
 		}
 	}
 
