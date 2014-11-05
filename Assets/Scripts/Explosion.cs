@@ -5,11 +5,22 @@ public class Explosion : MonoBehaviour {
 
 	public float destroyTime = 0.7f;
 
-	void Start(){
-		Invoke ("Die", destroyTime);
+	public float adjustmentAngle;
+
+	private Animator anim;
+
+	void OnEnable(){
+		transform.eulerAngles = new Vector3(0.0f, 0.0f, transform.eulerAngles.z + adjustmentAngle);
+		Invoke("Die", destroyTime);
+		anim.Play("Explosion");
 	}
 
 	void Die(){
-		Destroy (gameObject);
+		anim.StopPlayback();
+		gameObject.SetActive(false);
+	}
+
+	void Awake(){
+		anim = GetComponent<Animator>();
 	}
 }
