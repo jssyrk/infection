@@ -33,6 +33,7 @@ public class ZombieBehaviour : MonoBehaviour {
 		if(health <= 0){
 			GetComponent<AddScore>().DoSendScore();
 			gameObject.SetActive(false);
+			GetComponent<SpawnerObject>().Spawn ();
 		}
 	}
 
