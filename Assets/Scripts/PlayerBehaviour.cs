@@ -9,6 +9,8 @@ public class PlayerBehaviour : MonoBehaviour {
 	public int health = 100;
 	public Transform walkingTransform;
 
+	public string deathScreen = "Death Screen";
+
 	private int score;
 	private Animator anim;
 	private Animator walkingAnim;
@@ -67,6 +69,9 @@ public class PlayerBehaviour : MonoBehaviour {
 
 		if(health <=0){
 			Die();
+
+			Application.LoadLevel(deathScreen);
+
 		}
 	}
 
