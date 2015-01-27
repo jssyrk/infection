@@ -6,6 +6,7 @@ public class GameUI : MonoBehaviour {
 	private int health;
 	private int score;
 	private string gameInfo = "";
+	private double time;
 
 	private Rect boxRect = new Rect(10,10,300,50);
 
@@ -20,6 +21,13 @@ public class GameUI : MonoBehaviour {
 	}
 
 	void Start(){
+		time = 0.00;
+		UpdateUI ();
+	}
+
+	void Update(){
+		time += Time.deltaTime;
+
 		UpdateUI ();
 	}
 
@@ -34,7 +42,7 @@ public class GameUI : MonoBehaviour {
 	}
 
 	void UpdateUI(){
-		gameInfo = "Score : " + score.ToString() + "\nHealth : " + health;
+		gameInfo = "Score : " + score.ToString () + "\nHealth : " + health + "\nTime : " + time.ToString ("F2");;
 	}
 
 	void OnGUI(){
